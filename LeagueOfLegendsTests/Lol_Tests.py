@@ -38,13 +38,13 @@ def test_play_leblanc_introduction_video(driver):
 
     # Functions and test values
     lol_main_page.navigate_league_of_legends_news_page()
-    news_Page.acceptCookies()
+    news_Page.accept_cookies()
     news_Page.click_video_image()
-    news_Page.playVideo()
+    news_Page.play_video()
 
-    image_text_element = news_Page.getIconWebElement()
-    image_text = news_Page.getIconWebElementText()
-    news_title = news_Page.getNewsTitleText()
+    image_text_element = news_Page.get_icon_web_element()
+    image_text = news_Page.get_icon_web_element_text()
+    news_title = news_Page.get_news_title_text()
 
     # Assertions
     assert image_text_element.is_displayed(),f"{image_text} successfully displayed on users screen"
@@ -60,7 +60,7 @@ def test_for_champion_costumes_and_Language_change(driver):
     champions_details_page = ChampionDetailsPage(driver)
 
    #Functions and test values
-    news_Page.acceptCookies()
+    news_Page.accept_cookies()
     lol_main_page.navigate_champions_page()
     champions_page.navigate_champion_details_page()
     champions_details_page.check_champion_costumes()

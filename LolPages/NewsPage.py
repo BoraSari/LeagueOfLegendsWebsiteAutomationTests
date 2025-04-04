@@ -20,14 +20,14 @@ class LolNewsPage:
         self.news = (By.CSS_SELECTOR,"h1[data-testid='title']")
 
 
-     def acceptCookies(self):
+     def accept_cookies(self):
       self.driver.find_element(*self.cookie_section).click()
 
 
      def click_video_image(self):
       self.driver.find_element(*self.image).click()
 
-     def playVideo(self):
+     def play_video(self):
          iframe = self.driver.find_element(By.XPATH, "//iframe[@src='https://youtube.com/embed/A9iOtL_fb2c?rel=0']")
          self.driver.switch_to.frame(iframe)
          WebDriverWait(self.driver,10).until(expected_conditions.presence_of_element_located(self.video_player))
@@ -40,14 +40,14 @@ class LolNewsPage:
 
 
 
-     def getIconWebElement(self):
+     def get_icon_web_element(self):
       return self.driver.find_element(*self.image)
 
 
-     def getIconWebElementText(self):
+     def get_icon_web_element_text(self):
       return self.driver.find_element(*self.image).text
 
-     def getNewsTitleText(self):
+     def get_news_title_text(self):
          return self.driver.find_element(*self.news).text
 
 
